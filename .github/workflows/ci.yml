@@ -59,7 +59,7 @@ jobs:
           cppcheck --enable=all \
                    --inconclusive \
                    --std=c++11 \
-                   -I include/ \
+                   -I camera/include/ \
                    --suppress=missingIncludeSystem \
                    --suppress=missingInclude \
                    --suppress=unusedFunction \
