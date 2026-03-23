@@ -99,3 +99,27 @@ jobs:
 
       - name: Security scan with Bandit
         run: bandit receiver.py -ll
+  # =============================================
+  # Job 4: Python Smoke Test (Syntax Check)
+  # =============================================
+  smoke-test-python:
+    name: Python Syntax Check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./receiver
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install basic dependencies
+        run: |
+          pip install paho-mqtt opencv-python-headless numpy
+
+      - name: Verify Python Syntax
+        run: python -m py_compile receiver.py
