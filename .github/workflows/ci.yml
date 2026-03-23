@@ -65,7 +65,7 @@ jobs:
                    --suppress=unusedFunction \
                    --suppress=cstyleCast \
                    --error-exitcode=1 \
-                   src/
+                   camera/src/
 
   # =============================================
   # Job 3: Verificarea codului Python (Receiver)
